@@ -5,7 +5,7 @@
 ## Demo Video
 
 <a href="https://vimeo.com/user264746150/petfinder-demo?fl=ip&fe=ec">
-  <img src="thumbnail.jpg" alt="Petfinder Demo Video" style="width:100%;max-width:640px;border-radius:8px;">
+  <img width="1691" height="680" alt="thumbnail" src="https://github.com/user-attachments/assets/e89aac4e-177f-48d1-92fd-4c6ec5baa152" />
 </a>
 
 
