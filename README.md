@@ -355,9 +355,6 @@ This enables rapid testing and demo data generation.
                 $this->createNestedComments($comment, $post);
             }
         }
-
-        // $randomReplyDepth = rand(0, 4);
-
     }
 
     private function createNestedComments(Comment $parentComment, AnimalPost $post, $depth = 0, $maxDepth = 5)
