@@ -25,7 +25,7 @@ The application demonstrates production-grade architecture decisions: recursive 
 
 A threaded comment section that mirrors Reddit's structure, comments can have unlimited replies, but replies are constrained at configurable depths to preserve UX and database performance.
 
-<img width="1403" height="656" alt="Recursive_comments_in_action" src="https://github.com/user-attachments/assets/5655fe32-c04d-454d-9951-0b57792703ff" />
+<img width="1403" height="656" alt="Recursive_comments_in_action" src="https://github.com/user-attachments/assets/5655fe32-c04d-454d-9951-0b57792703ff" /> <br>
 
 **Key Implementation Details:**
 
@@ -56,7 +56,7 @@ A threaded comment section that mirrors Reddit's structure, comments can have un
 
 ### 2. **Soft-Delete Architecture & Observer Pattern**
 
-<img width="1403" height="656" alt="User_observer_triggering_comment_deletion-optimize" src="https://github.com/user-attachments/assets/f329d459-5a8b-4a60-959d-74615129ae7e" />
+<img width="1403" height="656" alt="User_observer_triggering_comment_deletion-optimize" src="https://github.com/user-attachments/assets/f329d459-5a8b-4a60-959d-74615129ae7e"/><br>
 
 
 When a user deletes their account, their comments should be soft-deleted (not cascade-deleted), preserving conversation threads. This required solving a subtle race condition.
@@ -184,7 +184,7 @@ This prevents recalculating comment trees on every page load, a common performan
 
 ### 5. **Bulk Operations with Database Transactions**
 
-<img width="1403" height="656" alt="Bulk_operations_in_action-optimize" src="https://github.com/user-attachments/assets/797af882-171f-41ac-8c80-8a0aa881d631" />
+<img width="1403" height="656" alt="Bulk_operations_in_action-optimize" src="https://github.com/user-attachments/assets/797af882-171f-41ac-8c80-8a0aa881d631" /><br>
 
 Users can bulk delete or restore their own posts and delete their comments. The admin can perform these operations on any user's content.
 
@@ -232,7 +232,7 @@ public function bulkRestore(Request $request)
 
 Tests verify authentication, soft deletion, bulk operations, and search functionality. Factories randomize data generation:
 
-<img width="1266" height="516" alt="Running_tests_operation" src="https://github.com/user-attachments/assets/fd50f2a4-42dc-4f18-b9e9-cf6ed573eaf3" />
+<img width="1266" height="516" alt="Running_tests_operation" src="https://github.com/user-attachments/assets/fd50f2a4-42dc-4f18-b9e9-cf6ed573eaf3" /><br>
 
 ```php
  public function test_user_can_put_one_post_in_bin(): void
@@ -324,7 +324,7 @@ Tests verify authentication, soft deletion, bulk operations, and search function
 
 **Factory (+Seeding) with randomization:**
 
-<img width="1265" height="554" alt="Running_db_seed_operation" src="https://github.com/user-attachments/assets/f039b2f0-ad2b-458b-9068-0afd17484898" />
+<img width="1265" height="554" alt="Running_db_seed_operation" src="https://github.com/user-attachments/assets/f039b2f0-ad2b-458b-9068-0afd17484898" /><br>
 
 The project includes factories that randomize:
 
@@ -499,7 +499,7 @@ Event ordering matters. Database constraints and application logic can conflict.
     <td><img src="https://github.com/user-attachments/assets/e8cc556c-de46-46dd-86d1-349d01c89cf0" alt="Petfinder bulk soft deletion" width="300"></td>
     <td><img src="https://github.com/user-attachments/assets/df23bcba-c0cc-4254-a60b-67125fe1f3a8" alt="Petfinder archive" width="300"></td>
   </tr>
-</table>
+</table><br>
 
 The application is fully responsive, optimized for interactions and small screens. Key mobile features include:
 
@@ -526,7 +526,6 @@ The application is fully responsive, optimized for interactions and small screen
 **Experience Level at Start:** 4 months of Laravel, <1 year total coding  
 **Outcome:** Production-grade architecture with zero code reuse from templates
 
----
 
 ## Why This Project Matters for My Career
 
