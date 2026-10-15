@@ -186,8 +186,13 @@ This prevents recalculating comment trees on every page load, a common performan
 
 <img width="1403" height="656" alt="Bulk_operations_in_action-optimize" src="https://github.com/user-attachments/assets/797af882-171f-41ac-8c80-8a0aa881d631" />
 
-
 Users can bulk delete or restore their own posts and delete their comments. The admin can perform these operations on any user's content.
+
+- Select multiple posts
+- Soft delete with transaction safety
+- Restore from trash
+- Admin operations on any user's content
+- Real-time cache invalidation
 
 ```php
 public function bulkRestore(Request $request)
@@ -320,6 +325,16 @@ Tests verify authentication, soft deletion, bulk operations, and search function
 **Factory (+Seeding) with randomization:**
 
 <img width="1265" height="554" alt="Running_db_seed_operation" src="https://github.com/user-attachments/assets/f039b2f0-ad2b-458b-9068-0afd17484898" />
+
+The project includes factories that randomize:
+
+- Number of uploaded images per post (2–4) -> min:2 | max:4
+- Comment counts and nesting depth
+- User roles and permissions
+- Post status and metadata
+
+This enables rapid testing and demo data generation.
+
 
 ```php
 /**
@@ -492,36 +507,6 @@ The application is fully responsive, optimized for interactions and small screen
 - Optimized search filters for mobile constraints
 - Fast loading with image optimization
 
----
-
-## Database Seeding & Factories
-
-**GIF: Running_db_seed_operation**
-<img width="300" height="554" alt="Running_db_seed_operation" src="https://github.com/user-attachments/assets/37ae2c6d-98fa-4087-bd6e-b783ecf88b34" />
-
-The project includes factories that randomize:
-
-- Number of uploaded images per post (2–4) -> min:2 | max:4
-- Comment counts and nesting depth
-- User roles and permissions
-- Post status and metadata
-
-This enables rapid testing and demo data generation.
-
----
-
-## Bulk Operations in Action
-
-**GIF: Bulk_operations_in_action**
-<img width="1403" height="656" alt="Bulk_operations_in_action-optimize" src="https://github.com/user-attachments/assets/d50d35a4-4c5c-42c2-94bc-6d4156db6d09" />
-
-- Select multiple posts
-- Soft delete with transaction safety
-- Restore from trash
-- Admin operations on any user's content
-- Real-time cache invalidation
-
----
 
 ## Key Learning Outcomes
 
