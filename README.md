@@ -15,8 +15,6 @@
 
 The application demonstrates production-grade architecture decisions: recursive comment threading with depth management, soft-delete patterns using Eloquent observers, full-text search via Typesense with Docker containerization, Redis caching, test coverage, and complex bulk operations, none of which are typical first projects.
 
-### <img width="1403" height="656" alt="Recursive_comments_in_action" src="https://github.com/user-attachments/assets/ae9f64d7-1fd9-4949-bcde-dea57c4152f3" />
-
 ⚠️ Important Notes <br>
 **Live Demo:** The demo is not currently hosted live due to infrastructure costs. <br>
 **Source Code:** The complete source code repository is maintained as a **private repository**. This public repository serves as a reference and documentation hub.
@@ -26,6 +24,8 @@ The application demonstrates production-grade architecture decisions: recursive 
 ### 1. **Recursive Comment System with Depth Management**
 
 A threaded comment section that mirrors Reddit's structure, comments can have unlimited replies, but replies are constrained at configurable depths to preserve UX and database performance.
+
+<img width="1403" height="656" alt="Recursive_comments_in_action" src="https://github.com/user-attachments/assets/5655fe32-c04d-454d-9951-0b57792703ff" />
 
 **Key Implementation Details:**
 
@@ -55,6 +55,9 @@ A threaded comment section that mirrors Reddit's structure, comments can have un
 ---
 
 ### 2. **Soft-Delete Architecture & Observer Pattern**
+
+<img width="1403" height="656" alt="User_observer_triggering_comment_deletion-optimize" src="https://github.com/user-attachments/assets/f329d459-5a8b-4a60-959d-74615129ae7e" />
+
 
 When a user deletes their account, their comments should be soft-deleted (not cascade-deleted), preserving conversation threads. This required solving a subtle race condition.
 
@@ -181,6 +184,9 @@ This prevents recalculating comment trees on every page load, a common performan
 
 ### 5. **Bulk Operations with Database Transactions**
 
+<img width="1403" height="656" alt="Bulk_operations_in_action-optimize" src="https://github.com/user-attachments/assets/797af882-171f-41ac-8c80-8a0aa881d631" />
+
+
 Users can bulk delete or restore their own posts and delete their comments. The admin can perform these operations on any user's content.
 
 ```php
@@ -221,7 +227,7 @@ public function bulkRestore(Request $request)
 
 Tests verify authentication, soft deletion, bulk operations, and search functionality. Factories randomize data generation:
 
-<img width="300" height="516" alt="Running_tests_operation" src="https://github.com/user-attachments/assets/77ecf763-72b8-4972-8e20-40bb0eb15fc6" />
+<img width="1266" height="516" alt="Running_tests_operation" src="https://github.com/user-attachments/assets/fd50f2a4-42dc-4f18-b9e9-cf6ed573eaf3" />
 
 ```php
  public function test_user_can_put_one_post_in_bin(): void
@@ -312,6 +318,8 @@ Tests verify authentication, soft deletion, bulk operations, and search function
 
 
 **Factory (+Seeding) with randomization:**
+
+<img width="1265" height="554" alt="Running_db_seed_operation" src="https://github.com/user-attachments/assets/f039b2f0-ad2b-458b-9068-0afd17484898" />
 
 ```php
 /**
